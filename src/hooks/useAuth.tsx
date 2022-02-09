@@ -99,6 +99,7 @@ function AuthProvider({ children }: AuthProviderData) {
     } catch (error) {
       // throw an error
       if (error instanceof Error) throw new Error(error.message);
+      // console.log
 
     } finally {
       // set isLoggingIn to false
@@ -136,7 +137,7 @@ function AuthProvider({ children }: AuthProviderData) {
 
   useEffect(() => {
     // add client_id to request's "Client-Id" header
-    api.defaults.headers.get['Client-Id'] = CLIENT_ID;
+    api.defaults.headers['Client-Id'] = CLIENT_ID;
     
   }, [])
 
